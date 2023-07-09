@@ -56,6 +56,7 @@ void instruction()
             goto again;
     	    break;
     }
+	system("cls");
 }
 
 void setup()
@@ -73,7 +74,11 @@ void setup()
 
 void Draw()
 {
-    system("cls");
+    CONSOLE_CURSOR_INFO info;											
+	info.dwSize = 100;
+	info.bVisible = false;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info);
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {0,0});		//	system("cls");
     for (int i = 0; i <= width+2; i++)
         cout<<"#";
     cout<<"\n";
